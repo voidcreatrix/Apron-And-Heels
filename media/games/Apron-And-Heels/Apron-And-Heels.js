@@ -48,7 +48,7 @@ undum.game.situations = {
         "<h4>Baker</h4>\
 		<p>I can feel you pressing up against me and into the countertop while I measure and pour \
 		and stir. I'm glad I remembered to wear an apron.  This could get messy.</p>\
-		<img src='https://www.historicalemporium.com/store/media/001559/001559_04.jpg' alt='apron closeup with Battenburg lace' class='float_right'>",
+		<center><img src='https://www.historicalemporium.com/store/media/001559/001559_04.jpg' alt='apron closeup with Battenburg lace' ></center>",
         {
             heading: "Making Winter Treats in the Kitchen",
             tags: ["topic"],
@@ -58,9 +58,6 @@ undum.game.situations = {
                     system.setQuality("skill", character.qualities.skill+1);
                 }
             },
-            exit: function(character, system, to) {
-                system.setQuality("stamina", character.qualities.stamina+1);
-            }
         }
     ),
 
