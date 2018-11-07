@@ -41,24 +41,16 @@ undum.game.situations = {
 		\
 		<p>Any of them might help with the winter blues. You decide.</p>\
         \
-        <p class='transient'><a href='hub'>Continue...</a></p>"
+        <p class='transient'><a href='stirring'>Continue...</a></p>"
     ),
+	
 	stirring: new undum.SimpleSituation(
-        "<p>Let's talk about the character.\
-        The character is described by a series of <em>qualities</em>. These\
-        are numeric values that can describe anything from natural abilities\
-        to how much of a resource the character controls. Qualities are\
-        shown in the box on the right of the text.</p>\
-        \
-        <p>The qualities there are those you started the game with. When you\
-        <a href='quality-types'>go to the next situation</a>, keep your\
-        eyes on the character panel. You'll notice I'll give you a boost to\
-        your stamina quality. This process is animated and highlighted to\
-        draw your attention to it. You could also get a boost of skill\
-        by carrying out <a href='./skill-boost'>this action</a> as many\
-        times as you like.</p>",
+        "<h4>Baker</h4>\
+		<p>I can feel you pressing up against me and into the countertop while I measure and pour \
+		and stir. I'm glad I remembered to wear an apron.  This could get messy.</p>\
+		<center><img src='https://www.historicalemporium.com/store/media/001559/001559_04.jpg' alt='apron closeup with Battenburg lace' ></center>",
         {
-            heading: "Qualities and the Character",
+            heading: "Making Winter Treats in the Kitchen",
             tags: ["topic"],
             displayOrder: 4,
             actions: {
@@ -66,9 +58,6 @@ undum.game.situations = {
                     system.setQuality("skill", character.qualities.skill+1);
                 }
             },
-            exit: function(character, system, to) {
-                system.setQuality("stamina", character.qualities.stamina+1);
-            }
         }
     ),
 
