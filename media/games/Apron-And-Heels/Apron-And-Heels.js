@@ -29,9 +29,8 @@ undum.game.slideUpSpeed = 200
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
-        "<h1>Apron and Heels</h1>\
-		<h4><center>A story of sex, love, and cookie dough</center></h4>\
-        <img src='media/games/Apron-And-Heels/lace-ribbon-transparent-background.png' alt='lace ribbon' height=150>\
+        "<h1>A story of sex, love, and cookies</h1>\
+        <img src='media/games/Apron-And-Heels/lace-ribbon-transparent-background.png' alt='lace ribbon' height=120>\
         <p>Cookies! Cookies might help. It's too early to be dark out,\
 		it's too cold to be outside. This is a story about trying to make \
 		cookies, in an apron and heels, while your lover keeps distracting \
