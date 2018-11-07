@@ -41,8 +41,9 @@ undum.game.situations = {
 		\
 		<p>Any of them might help with the winter blues. You decide.</p>\
         \
-        <p class='transient'><a href='hub'>Continue...</a></p>"
+        <p class='transient'><a href='stirring'>Continue...</a></p>"
     ),
+	
 	stirring: new undum.SimpleSituation(
         "<p>Let's talk about the character.\
         The character is described by a series of <em>qualities</em>. These\
