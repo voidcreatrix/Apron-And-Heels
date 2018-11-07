@@ -43,6 +43,34 @@ undum.game.situations = {
         \
         <p class='transient'><a href='hub'>Continue...</a></p>"
     ),
+	stirring: new undum.SimpleSituation(
+        "<p>Let's talk about the character.\
+        The character is described by a series of <em>qualities</em>. These\
+        are numeric values that can describe anything from natural abilities\
+        to how much of a resource the character controls. Qualities are\
+        shown in the box on the right of the text.</p>\
+        \
+        <p>The qualities there are those you started the game with. When you\
+        <a href='quality-types'>go to the next situation</a>, keep your\
+        eyes on the character panel. You'll notice I'll give you a boost to\
+        your stamina quality. This process is animated and highlighted to\
+        draw your attention to it. You could also get a boost of skill\
+        by carrying out <a href='./skill-boost'>this action</a> as many\
+        times as you like.</p>",
+        {
+            heading: "Qualities and the Character",
+            tags: ["topic"],
+            displayOrder: 4,
+            actions: {
+                "skill-boost": function(character, system, action) {
+                    system.setQuality("skill", character.qualities.skill+1);
+                }
+            },
+            exit: function(character, system, to) {
+                system.setQuality("stamina", character.qualities.stamina+1);
+            }
+        }
+    ),
 
     // NB: The 'hub' situation which is the main list of topics, is
     // defined wholly in the HTML file, and doesn't have an entry in
