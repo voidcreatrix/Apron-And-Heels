@@ -7,7 +7,7 @@
 /* A unique id for your game. This is never displayed. I use a UUID,
  * but you can use anything that is guaranteed unique (a URL you own,
  * or a variation on your email address, for example). */
-undum.game.id = "be1c95b9-cbc7-48c6-8e6a-89837aa9113e";
+undum.game.id = "5b083de3-5819-4998-9b37-d1f09da74ba6";
 
 /* A string indicating what version of the game this is. Versions are
  * used to control saved-games. If you change the content of a game,
@@ -24,26 +24,25 @@ undum.game.fadeSpeed = 1500
 
 /* A variable that changes the slide up speed after clicking on an
  * option. */
-undum.game.slideUpSpeed = 500
+undum.game.slideUpSpeed = 200
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
-        "<h1>Starting Out with Undum</h1>\
-        <img src='media/games/tutorial/woodcut1.png' class='float_right'>\
-        <p>Welcome to the Undum tutorial. Undum is a tool for writing\
-        hypertext interactive fiction. It has some unique features\
-        and a visual design that encourages narrative games.</p>\
+        "<h1>Apron and Heels</h1>\
+		<h4><center>A story of sex, love, and cookie dough</center></h4>\
+        <img src='media/games/Apron-And-Heels/lace-ribbon-transparent-background.png' alt='lace ribbon' height=150>\
+        <p>Cookies! Cookies might help. It's too early to be dark out,\
+		it's too cold to be outside. This is a story about trying to make \
+		cookies, in an apron and heels, while your lover keeps distracting \
+		you and getting in your way. Or it might be about being the lover \
+		who's trying to steal a bite of batter. Or maybe it's a story about \
+		using cookie dough as a sex toy and ending up pinned down on the \
+		kitchen floor, or naked, or both. </p>\
+		\
+		<p>Any of them might help with the winter blues. You decide.</p>\
         \
-        <p>Hypertext interactive fiction is the digital equivalent of the\
-        Choose Your Own Adventure (CYOA) books that were popular in the\
-        1980s. The story is told in chunks, and you select from a range\
-        of options to move it forward. Unlike the book form, however, the\
-        digital form gives you far more flexibility to tell rich stories\
-        and introduce more interesting game elements.</p>\
-        \
-        <p class='transient'>Click <a href='hub'>this link to\
-        continue...</a></p>"
+        <p class='transient'><a href='hub'>Continue...</a></p>"
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
