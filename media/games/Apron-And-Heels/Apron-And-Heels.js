@@ -461,7 +461,15 @@ undum.game.start = "start";
  * possess. We don't have to be exhaustive, but if we miss one out then
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
-
+	baker_consciousness:new undum.IntegerQuality(
+        "Consciousness", {priority:"0001", group:'baker'}
+    ),
+	
+	lover_consciousness:new undum.IntegerQuality(
+		"Consciousness", {priority: "0001", group:'lover'}
+	)
+	
+	/*
     skill: new undum.IntegerQuality(
         "Skill", {priority:"0001", group:'stats'}
     ),
@@ -478,7 +486,9 @@ undum.game.qualities = {
     ),
     novice: new undum.OnOffQuality(
         "Novice", {priority:"0002", group:'progress', onDisplay:"&#10003;"}
+	
     )
+	*/
 };
 
 // ---------------------------------------------------------------------------
@@ -489,6 +499,7 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
 	baker: new undum.QualityGroup('Baker', {priority:"0001"}),
+	lover: new undum.QualityGroup('Lover', {priority:"0002"}),
     stats: new undum.QualityGroup(null, {priority:"0002"}),
     progress: new undum.QualityGroup('Progress', {priority:"0003"})
 };
@@ -497,11 +508,12 @@ undum.game.qualityGroups = {
 /* This function gets run before the game begins. It is normally used
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
-	//character.qualitites.baker_consciousness = 3;
-    character.qualities.skill = 12;
-    character.qualities.stamina = 12;
-    character.qualities.luck = 0;
-    character.qualities.novice = 1;
-    character.qualities.inspiration = 0;
-    system.setCharacterText("<p>Your lover walks in while you're mixing the cookie dough.</p>");
+	character.qualities.baker_consciousness = 3;
+	character.qualities.lover_consciousness = 3;
+    //character.qualities.skill = 12;
+    //character.qualities.stamina = 12;
+    //character.qualities.luck = 0;
+    //character.qualities.novice = 1;
+    //character.qualities.inspiration = 0;
+    system.setCharacterText("<p>Your lover walks in while you're mixing cookie dough.</p>");
 };
