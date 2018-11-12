@@ -93,7 +93,7 @@ undum.game.situations = {
 		{
             actions: {
                 "sit_down": function(character, system, action) {
-                    system.setQuality("baker_consciousness", character.qualities.baker_consciousness-1);
+                    system.setQuality("lover_consciousness", character.qualities.lover_consciousness-1);
                 },
                 "luck-reduce": function(character, system, action) {
                     system.setQuality("luck", character.qualities.luck-1);
