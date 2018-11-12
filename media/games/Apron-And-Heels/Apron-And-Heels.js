@@ -48,19 +48,63 @@ undum.game.situations = {
         "<h4>Baker</h4>\
 		<p>I can feel you pressing up against me and into the countertop while I measure and pour \
 		and stir. I'm glad I remembered to wear an apron.  This could get messy.</p>\
-		<center><img src='https://www.historicalemporium.com/store/media/001559/001559_04.jpg' alt='apron closeup with Battenburg lace' ></center>",
+		<center><img src='https://www.historicalemporium.com/store/media/001559/001559_04.jpg' alt='apron closeup with Battenburg lace' ></center>\
+		<p class='transient'>Lover, will you <a href='offer_to_help'>offer to help</a>?  Or <a href='get_in_the_way'>get in the way</a>?</p>",
         {
             heading: "Making Winter Treats in the Kitchen",
             tags: ["topic"],
-            displayOrder: 4,
-            actions: {
-                "skill-boost": function(character, system, action) {
-                    system.setQuality("skill", character.qualities.skill+1);
-                }
-            },
+            displayOrder: 4
         }
     ),
-
+	
+	
+	
+	get_in_the_way: new undum.SimpleSituation(
+        "<h4>Lover</h4>\
+		<p>I love standing behind you while you're baking.  Wrapping my arms around your hips\
+		while you stir something on the stove is one of my favourite winter pick-me-ups. I want\
+		to nuzzle your neck and get in the way.</p>\
+		\
+		<p>I don't know why I'm somehow always exactly in the way of what you're trying to do. \
+		There are so many delicious textures and flavours to try, and all of them are better\
+		licked off of your fingers.  Can I have some of that?\
+		\
+		<p class='transient'>Baker, will you <a href='give_a_taste'>give them a taste</a>? Or <a href='you_can_wait'>tell them to wait</a>?</p>"
+        
+    ),
+	
+	offer_to_help: new undum.SimpleSituation(
+        "<h4>Under construction...</h4>"
+        
+    ),	
+	
+	give_a_taste: new undum.SimpleSituation(
+        "<h4>Under construction...</h4>"
+        
+    ),	
+	you_can_wait: new undum.SimpleSituation(
+        "<h4>Baker</h4>\
+		<p>No, you can't.  You can wait... and watch in the meantime.</p>\
+		\
+		<p>I, on the other hand, can taste and slowly lick spoons that are finished stirring.</p>\
+		\
+		<p class='transient'>Lover, you're starting to feel faint. You should probably \
+		<a href='./sit_down' class = 'once'>sit down</a>.</p>",
+		{
+            actions: {
+                "sit_down": function(character, system, action) {
+                    system.setQuality("baker_consciousness", character.qualities.baker_consciousness-1);
+                },
+                "luck-reduce": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck-1);
+                }
+            },
+            exit: function(character, system, to) {
+                system.setQuality("novice", 0);
+            }
+        }
+        
+    ),	
     // NB: The 'hub' situation which is the main list of topics, is
     // defined wholly in the HTML file, and doesn't have an entry in
     // the game.situations dictionary in this file.
