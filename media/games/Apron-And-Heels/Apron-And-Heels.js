@@ -53,14 +53,11 @@ undum.game.situations = {
         {
             heading: "Making Winter Treats in the Kitchen",
             tags: ["topic"],
-            displayOrder: 4,
-            actions: {
-                "skill-boost": function(character, system, action) {
-                    system.setQuality("skill", character.qualities.skill+1);
-                }
-            },
+            displayOrder: 4
         }
     ),
+	
+	
 	
 	get_in_the_way: new undum.SimpleSituation(
         "<h4>Lover</h4>\
@@ -86,7 +83,26 @@ undum.game.situations = {
         
     ),	
 	you_can_wait: new undum.SimpleSituation(
-        "<h4>Under construction...</h4>"
+        "<h4>Baker</h4>\
+		<p>No, you can't.  You can wait... and watch in the meantime.</p>\
+		\
+		<p>I, on the other hand, can taste and slowly lick spoons that are finished stirring.</p>\
+		\
+		<p class='transient'>Lover, you're starting to feel faint. You should probably \
+		<a href='./sit_down' class = 'once'>sit down</a>.</p>",
+		{
+            actions: {
+                "sit_down": function(character, system, action) {
+                    system.setQuality("baker_consciousness", character.qualities.baker_consciousness-1);
+                },
+                "luck-reduce": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck-1);
+                }
+            },
+            exit: function(character, system, to) {
+                system.setQuality("novice", 0);
+            }
+        }
         
     ),	
     // NB: The 'hub' situation which is the main list of topics, is
