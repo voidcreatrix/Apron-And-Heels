@@ -24,7 +24,7 @@ undum.game.fadeSpeed = 1500
 
 /* A variable that changes the slide up speed after clicking on an
  * option. */
-undum.game.slideUpSpeed = 200
+undum.game.slideUpSpeed = 1000
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
@@ -74,12 +74,12 @@ undum.game.situations = {
     ),
 	
 	offer_to_help: new undum.SimpleSituation(
-        "<h4>Under construction...</h4>"
+        "<h4>Classified</h4>"
         
     ),	
 	
 	give_a_taste: new undum.SimpleSituation(
-        "<h4>Under construction...</h4>"
+        "<h4>Classified</h4>"
         
     ),	
 	you_can_wait: new undum.SimpleSituation(
@@ -88,8 +88,9 @@ undum.game.situations = {
 		\
 		<p>I, on the other hand, can taste and slowly lick spoons that are finished stirring.</p>\
 		\
-		<p class='transient'>Lover, you're starting to feel faint. You should probably \
-		<a href='./sit_down' class = 'once'>sit down</a>.</p>",
+		<p class='transient'>Lover, you're starting to look faint. You should probably \
+		<a href='./sit_down' class = 'once'>sit down</a>.</p>\
+		<h4>Remaining chapters are classified... contact owner for access</h4>",
 		{
             actions: {
                 "sit_down": function(character, system, action) {
