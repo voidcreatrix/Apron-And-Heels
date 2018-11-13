@@ -1562,8 +1562,9 @@
         // Scroll to the top of the new content.
         endOutputTransaction();
 
-        // We're able to save, if we weren't already.
+        // We're able to save and erase, if we weren't already.
         $("#save").attr('disabled', false);
+		$("#erase").attr('disabled', false);		
     };
 
     /* This gets called to actually do the work of processing a code.
@@ -1647,7 +1648,7 @@
                 if (mobile) {
                   contentToHide.fadeOut(system.options.mobile_hide_speed);
                 } else {
-				        // Get fate out speed of options, and slide up speed variables.
+				        // Get fade out speed of options, and slide up speed variables.
                   contentToHide.
                     animate({opacity: 0}, system.options.fade_speed).
                     slideUp(system.options.slide_up_speed, function() {
@@ -1718,13 +1719,18 @@
     /* Erases the character in local storage. This is permanent! */
     var doErase = function(force) {
         var saveId = getSaveId();
-        if (localStorage[saveId]) {
-            if (force || confirm("erase_message".l())) {
+		if (force || confirm("erase_message".l())) {
+			if (localStorage[saveId]) {
+           
                 delete localStorage[saveId];
-                $("#erase").attr('disabled', true);
-                startGame();
+                
+                
             }
+			$("#erase").attr('disabled', true);
+			$("#save").attr('disabled', true);
+			startGame();
         }
+		
     };
 
     /* Find and return a list of ids for all situations with the given tag. */
@@ -1787,7 +1793,7 @@
         localStorage[getSaveId()] = JSON.stringify(progress);
 
         // Switch the button highlights.
-        $("#erase").attr('disabled', false);
+        //$("#erase").attr('disabled', false);
         $("#save").attr('disabled', true);
     };
 
@@ -1869,13 +1875,13 @@
                 try {
                     loadGame(JSON.parse(storedCharacter));
                     save.attr('disabled', true);
-                    erase.attr("disabled", false);
+                    //erase.attr("disabled", false);
                 } catch(err) {
                     doErase(true);
                 }
             } else {
                 save.attr('disabled', true);
-                erase.attr("disabled", true);
+                erase.attr('disabled', true); 
                 startGame();
             }
         } else {
